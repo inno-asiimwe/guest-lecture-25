@@ -27,6 +27,7 @@
       pip:
         name: virtualenv
         executable: pip3
+        break_system_packages: true
 
     - name: Verify installations
       command: "{{ item }}"
@@ -41,3 +42,10 @@
     - name: Show installation results
       debug:
         msg: "{{ command_output.results | map(attribute='stdout') | list }}"
+
+    - name: Clone a public Git repository
+      git:
+        repo: 'https://github.com/inno-asiimwe/guest-lecture-25.git'
+        dest: '/var/demo'
+        clone: yes
+        update: yes

@@ -1,0 +1,34 @@
+name: Run Flask Unit Tests
+
+on:
+  push:
+    branches:
+      - main  
+  pull_request:
+    branches:
+      - main  
+jobs:
+  test:
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2 
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  
+
+      - name: Install dependencies
+        run: |
+          cd app 
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: |
+          cd app
+          source venv/bin/activate
+          python -m unittest test_server.py

@@ -13,7 +13,7 @@ The Demo app does absolutely nothing
 - Activate the Virtual environment
 
     ```
-    source venv/bin/activat
+    source venv/bin/activate
     ```
 
 - Install requirements
