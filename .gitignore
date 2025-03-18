@@ -1,2 +1,35 @@
 venv/
 __pycache__
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Ignore crash logs
+crash.log
+
+# Ignore Terraform variables (containing secrets)
+*.tfvars
+*.tfvars.json
+
+# Ignore Terraform plan files
+*.tfplan
+
+# Ignore provider and backend logs
+.terraform/
+.terraform.lock.hcl
+
+# Ignore Terraform-generated override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore sensitive environment files
+.env
+.envrc
+
+# Ignore log and temp files
+*.log
+*.bak
+key.json
+.DS_Store
