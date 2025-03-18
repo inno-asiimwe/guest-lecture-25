@@ -9,7 +9,7 @@ class FlaskTestCase(unittest.TestCase):
     def test_home(self):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Welcome to the Flask Demo', response.data)
+        self.assertIn(b'Welcome to our guest lecture', response.data)
 
     def test_hello_api(self):
         response = self.app.get('/api')
